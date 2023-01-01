@@ -1,0 +1,16 @@
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := AV1SecureVdecCA
+LOCAL_MODULE_TAGS := optional
+LOCAL_PROPRIETARY_MODULE := true
+
+LOCAL_WHOLE_STATIC_LIBRARIES += AV1SecureVdecCA_mtee
+
+LOCAL_SHARED_LIBRARIES += liblog
+LOCAL_SHARED_LIBRARIES += libion libion_mtk
+LOCAL_SHARED_LIBRARIES += libcutils
+LOCAL_SHARED_LIBRARIES += libgz_uree
+LOCAL_SHARED_LIBRARIES += libgz_gp_client
+include $(BUILD_SHARED_LIBRARY)
